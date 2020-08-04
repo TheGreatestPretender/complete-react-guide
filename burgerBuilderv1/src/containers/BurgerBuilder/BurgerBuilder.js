@@ -17,10 +17,6 @@ const INGREDIENT_PRICES = {
 };
 
 class BurgerBuilder extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {...}
-    // }
     state = {
         ingredients: null,
         totalPrice: 4,
@@ -91,7 +87,6 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinueHandler = () => {
-        // alert('You continue!');
         this.setState( { loading: true } );
         const order = {
             ingredients: this.state.ingredients,
@@ -101,7 +96,7 @@ class BurgerBuilder extends Component {
                 address: {
                     street: 'Teststreet 1',
                     zipCode: '41351',
-                    country: 'Germany'
+                    country: 'USA'
                 },
                 email: 'test@test.com'
             },
@@ -148,7 +143,7 @@ class BurgerBuilder extends Component {
         if ( this.state.loading ) {
             orderSummary = <Spinner />;
         }
-        // {salad: true, meat: false, ...}
+        
         return (
             <Aux>
                 <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
